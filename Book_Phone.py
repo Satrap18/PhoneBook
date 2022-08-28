@@ -24,15 +24,21 @@ def Home():
 
 
 	def Show():
-		window.resizable(True,True)
 		con = sqlite3.connect('Phone_Book.db')
 		cur = con.cursor()
 		cur = cur.execute("SELECT Name FROM Book")
 		text = cur.fetchall()
-		label1 = Label(window,text=text) 
-		label1.pack()
-
-		
+		cur = cur.execute("SELECT Phone FROM Book")
+		phone = cur.fetchall()
+		for t in text:
+			pass
+		for tt in phone:
+			pass
+		with open('Phone_Book.html', 'w',encoding='utf-8') as file:
+			file.write(str("\n%s\n" % t + ":"))
+			file.write(str("\n%s\n" % tt))
+		messagebox.showinfo('Show','You Can See All User in Phone_Book.html')
+	
 	
 	window = Tk()
 	window.title('Phone Book')
