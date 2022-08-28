@@ -71,7 +71,9 @@ def Home():
 		messagebox.showinfo('Show','You Can See All User in Phone_Book.html')
 		'''
 	def update():
-		pass
+		root = Tk()
+		root.title("update")
+		root.mainloop()
 	window = Tk()
 	window.title('Phone Book')
 	window.geometry('300x300')
